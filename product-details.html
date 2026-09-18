@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Bazvor — Product Details</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="product-details.css">
+</head>
+
+<body>
+
+<div class="bazvor-details-app">
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="product-header">
+
+    <button
+      class="details-header-btn"
+      id="backButton"
+      type="button"
+      aria-label="Back"
+    >
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <form
+      class="details-search"
+      id="searchForm"
+    >
+
+      <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+      <input
+        type="search"
+        id="productSearch"
+        placeholder="Search products..."
+        autocomplete="off"
+      >
+
+      <button
+        class="camera-btn"
+        id="cameraButton"
+        type="button"
+        aria-label="Visual search"
+      >
+        <i class="fa-solid fa-camera"></i>
+      </button>
+
+    </form>
+
+    <button
+      class="details-header-btn cart-btn"
+      id="cartButton"
+      type="button"
+      aria-label="Cart"
+    >
+
+      <i class="fa-solid fa-cart-shopping"></i>
+
+      <span id="cartCount">0</span>
+
+    </button>
+
+  </header>
+
+
+  <main class="details-main">
+
+    <!-- =====================================================
+         LOADING
+    ====================================================== -->
+
+    <section
+      class="details-loading"
+      id="detailsLoading"
+    >
+
+      <div class="loading-image"></div>
+
+      <div class="loading-line large"></div>
+
+      <div class="loading-line"></div>
+
+      <div class="loading-line short"></div>
+
+      <div class="loading-line"></div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRODUCT
+    ====================================================== -->
+
+    <section
+      class="product-details"
+      id="productDetails"
+      hidden
+    >
+
+      <!-- =================================================
+           PRODUCT TOP
+      ================================================== -->
+
+      <div class="product-top">
+
+        <!-- GALLERY -->
+
+        <section class="product-gallery">
+
+          <div class="main-product-image">
+
+            <img
+              id="mainProductImage"
+              src=""
+              alt="Product"
+            >
+
+            <div
+              class="image-discount"
+              id="imageDiscount"
+              hidden
+            ></div>
+
+            <button
+              class="image-wishlist"
+              id="imageWishlist"
+              type="button"
+              aria-label="Wishlist"
+            >
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+            <div
+              class="image-counter"
+              id="imageCounter"
+            >
+              1 / 1
+            </div>
+
+          </div>
+
+          <div
+            class="thumbnail-scroll"
+            id="thumbnailScroll"
+          ></div>
+
+        </section>
+
+
+        <!-- PRODUCT INFO -->
+
+        <section class="product-info-section">
+
+          <div
+            class="verified-row"
+            id="verifiedRow"
+            hidden
+          >
+            <i class="fa-solid fa-circle-check"></i>
+            Bazvor Verified
+          </div>
+
+          <h1 id="productName">
+            Product
+          </h1>
+
+
+          <!-- PRICE -->
+
+          <div class="details-price-row">
+
+            <strong id="productPrice">
+              ৳0
+            </strong>
+
+            <del
+              id="oldPrice"
+              hidden
+            >
+              ৳0
+            </del>
+
+            <span
+              class="details-discount"
+              id="detailsDiscount"
+              hidden
+            >
+              0% OFF
+            </span>
+
+          </div>
+
+
+          <!-- STOCK -->
+
+          <div class="availability-row">
+
+            <span
+              class="stock-status"
+              id="stockStatus"
+            >
+              Checking stock...
+            </span>
+
+          </div>
+
+
+          <!-- RATING + ACTIONS -->
+
+          <div class="info-bottom-row">
+
+            <div class="rating-row">
+
+              <div
+                class="rating-stars"
+                id="ratingStars"
+              ></div>
+
+              <strong id="ratingValue">
+                0.0
+              </strong>
+
+              <span id="reviewCount">
+                0 Reviews
+              </span>
+
+            </div>
+
+
+            <div class="product-actions">
+
+              <button
+                class="product-action-btn wishlist-action"
+                id="wishlistBtn"
+                type="button"
+              >
+
+                <i
+                  class="fa-regular fa-heart"
+                  id="wishlistIcon"
+                ></i>
+
+                <span>Wishlist</span>
+
+              </button>
+
+
+              <button
+                class="product-action-btn share-action"
+                id="shareButton"
+                type="button"
+              >
+
+                <i class="fa-solid fa-share-nodes"></i>
+
+                <span>Share</span>
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+      <!-- =================================================
+           VARIANTS
+      ================================================== -->
+
+      <section
+        class="details-card variant-card"
+        id="variantSection"
+        hidden
+      >
+
+        <!-- COLOR -->
+
+        <div
+          class="variant-group"
+          id="colorVariantGroup"
+          hidden
+        >
+
+          <div class="variant-title">
+
+            <strong>
+              Color
+            </strong>
+
+            <span id="selectedColor">
+              Select a color
+            </span>
+
+          </div>
+
+          <div
+            class="color-options"
+            id="colorOptions"
+          ></div>
+
+        </div>
+
+
+        <!-- SIZE -->
+
+        <div
+          class="variant-group"
+          id="sizeVariantGroup"
+          hidden
+        >
+
+          <div class="variant-title">
+
+            <strong>
+              Size
+            </strong>
+
+            <span id="selectedSize">
+              Select a size
+            </span>
+
+          </div>
+
+          <div
+            class="size-options"
+            id="sizeOptions"
+          ></div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           QUANTITY
+      ================================================== -->
+
+      <section class="details-card quantity-card">
+
+        <div class="quantity-title">
+
+          <strong>
+            Qty
+          </strong>
+
+          <span id="stockText">
+            Available
+          </span>
+
+        </div>
+
+        <div class="quantity-control">
+
+          <button
+            id="quantityMinus"
+            type="button"
+            aria-label="Decrease quantity"
+          >
+            <i class="fa-solid fa-minus"></i>
+          </button>
+
+          <span id="quantityValue">
+            1
+          </span>
+
+          <button
+            id="quantityPlus"
+            type="button"
+            aria-label="Increase quantity"
+          >
+            <i class="fa-solid fa-plus"></i>
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           DELIVERY INFORMATION
+      ================================================== -->
+
+      <section class="delivery-section">
+
+        <div class="delivery-heading">
+
+          <div class="delivery-heading-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+
+          <div>
+
+            <strong>
+              Delivery Information
+            </strong>
+
+            <span>
+              Fast and reliable delivery
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- DELIVERY CHARGE -->
+
+        <div class="delivery-item delivery-primary">
+
+          <div class="delivery-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+
+          <div class="delivery-main-text">
+
+            <strong>
+              Delivery Charge
+            </strong>
+
+            <span id="deliveryType">
+              Calculating delivery charge...
+            </span>
+
+          </div>
+
+          <div class="delivery-charge-box">
+
+            <strong id="deliveryCharge">
+              Calculating...
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <!-- DELIVERY TIME -->
+
+        <div class="delivery-item">
+
+          <div class="delivery-icon">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+
+          <div class="delivery-main-text">
+
+            <strong>
+              Delivery Time
+            </strong>
+
+            <span id="deliveryTimeText">
+              Calculating delivery time...
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- RETURNS
+             Hidden automatically when no return policy exists -->
+
+        <div
+          class="delivery-item return-delivery-item"
+          id="returnDeliveryItem"
+          hidden
+        >
+
+          <div class="delivery-icon">
+            <i class="fa-solid fa-rotate-left"></i>
+          </div>
+
+          <div class="delivery-main-text">
+
+            <strong>
+              Returns
+            </strong>
+
+            <span id="returnDays">
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- WARRANTY -->
+
+        <div
+          class="delivery-item warranty-delivery-item"
+          id="warrantyDeliveryItem"
+          hidden
+        >
+
+          <div class="delivery-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+
+          <div class="delivery-main-text">
+
+            <strong>
+              Warranty
+            </strong>
+
+            <span id="warrantyShort">
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           SELLER
+      ================================================== -->
+
+      <section class="details-card seller-card">
+
+        <div class="seller-title">
+
+          <i class="fa-solid fa-store"></i>
+
+          <strong>
+            Sold by
+          </strong>
+
+        </div>
+
+
+        <div class="seller-content">
+
+          <div class="seller-avatar">
+
+            <img
+              id="sellerImage"
+              src=""
+              alt="Seller"
+              hidden
+            >
+
+            <i
+              class="fa-solid fa-store"
+              id="sellerDefaultIcon"
+            ></i>
+
+          </div>
+
+
+          <div class="seller-info">
+
+            <strong id="sellerName">
+              Seller
+            </strong>
+
+            <div class="seller-meta">
+
+              <span class="seller-rating">
+
+                <i class="fa-solid fa-star"></i>
+
+                <span id="sellerRating">
+                  —
+                </span>
+
+              </span>
+
+
+              <span
+                class="seller-verified"
+                id="sellerVerified"
+                hidden
+              >
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Verified
+
+              </span>
+
+            </div>
+
+
+            <div class="seller-stats">
+
+              <span>
+
+                <strong id="sellerProductCount">
+                  —
+                </strong>
+
+                Products
+
+              </span>
+
+
+              <span>
+
+                <strong id="sellerStoreStatus">
+                  Active
+                </strong>
+
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="seller-buttons">
+
+            <button
+              class="chat-seller-btn"
+              id="chatSellerButton"
+              type="button"
+            >
+
+              <i class="fa-regular fa-message"></i>
+
+              <span>
+                Chat
+              </span>
+
+            </button>
+
+
+            <button
+              class="visit-store-btn"
+              id="visitStoreButton"
+              type="button"
+            >
+
+              <i class="fa-solid fa-store"></i>
+
+              <span>
+                Visit Store
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           DESCRIPTION
+      ================================================== -->
+
+      <section class="details-card accordion-card">
+
+        <button
+          class="accordion-header active"
+          type="button"
+          data-target="descriptionContent"
+        >
+
+          <span>
+
+            <i class="fa-solid fa-align-left"></i>
+
+            Product Description
+
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+
+        <div
+          class="accordion-content show"
+          id="descriptionContent"
+        >
+
+          <p id="productDescription">
+            No description available.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           SPECIFICATIONS
+      ================================================== -->
+
+      <section class="details-card accordion-card">
+
+        <button
+          class="accordion-header"
+          type="button"
+          data-target="specificationContent"
+        >
+
+          <span>
+
+            <i class="fa-solid fa-list-check"></i>
+
+            Specifications
+
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+
+        <div
+          class="accordion-content"
+          id="specificationContent"
+        >
+
+          <div
+            class="specification-list"
+            id="specificationList"
+          ></div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           POLICY
+      ================================================== -->
+
+      <section class="details-card accordion-card">
+
+        <button
+          class="accordion-header"
+          type="button"
+          data-target="policyContent"
+        >
+
+          <span>
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Return & Warranty
+
+          </span>
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+
+        <div
+          class="accordion-content"
+          id="policyContent"
+        >
+
+          <!-- RETURN POLICY -->
+
+          <div
+            class="policy-item"
+            id="returnPolicyItem"
+            hidden
+          >
+
+            <i class="fa-solid fa-rotate-left"></i>
+
+            <div>
+
+              <strong>
+                Return Policy
+              </strong>
+
+              <span id="returnPolicy">
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- WARRANTY -->
+
+          <div
+            class="policy-item"
+            id="warrantyPolicyItem"
+            hidden
+          >
+
+            <i class="fa-solid fa-certificate"></i>
+
+            <div>
+
+              <strong>
+                Warranty
+              </strong>
+
+              <span id="warranty">
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           REVIEWS
+      ================================================== -->
+
+      <section class="details-card reviews-card">
+
+        <div class="reviews-header">
+
+          <div>
+
+            <h2>
+              Customer Reviews
+            </h2>
+
+            <p>
+              See what customers say about this product
+            </p>
+
+          </div>
+
+
+          <button
+            class="write-review-btn"
+            id="writeReviewButton"
+            type="button"
+          >
+
+            <i class="fa-solid fa-star"></i>
+
+            Rate Product
+
+          </button>
+
+        </div>
+
+
+        <div class="big-rating">
+
+          <strong id="bigRating">
+            0.0
+          </strong>
+
+          <div>
+
+            <div
+              class="rating-stars big"
+              id="bigRatingStars"
+            ></div>
+
+            <span id="bigReviewCount">
+              0 Reviews
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <!-- REVIEW FORM -->
+
+        <div
+          class="review-form"
+          id="reviewForm"
+          hidden
+        >
+
+          <div class="review-form-title">
+
+            <strong>
+              Rate this product
+            </strong>
+
+            <span id="selectedRatingText">
+              Select your rating
+            </span>
+
+          </div>
+
+
+          <div
+            class="rating-selector"
+            id="ratingSelector"
+          >
+
+            <button type="button" data-rating="1">
+              <i class="fa-regular fa-star"></i>
+            </button>
+
+            <button type="button" data-rating="2">
+              <i class="fa-regular fa-star"></i>
+            </button>
+
+            <button type="button" data-rating="3">
+              <i class="fa-regular fa-star"></i>
+            </button>
+
+            <button type="button" data-rating="4">
+              <i class="fa-regular fa-star"></i>
+            </button>
+
+            <button type="button" data-rating="5">
+              <i class="fa-regular fa-star"></i>
+            </button>
+
+          </div>
+
+
+          <textarea
+            id="reviewText"
+            rows="4"
+            maxlength="500"
+            placeholder="Write your review..."
+          ></textarea>
+
+
+          <div class="review-form-actions">
+
+            <button
+              class="cancel-review-btn"
+              id="cancelReviewButton"
+              type="button"
+            >
+              Cancel
+            </button>
+
+
+            <button
+              class="submit-review-btn"
+              id="submitReviewButton"
+              type="button"
+            >
+
+              <i class="fa-solid fa-paper-plane"></i>
+
+              Submit Review
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="review-list"
+          id="reviewList"
+        >
+
+          <div class="no-reviews">
+
+            <i class="fa-regular fa-comment-dots"></i>
+
+            <span>
+              No reviews yet
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           RELATED PRODUCTS
+      ================================================== -->
+
+      <section class="related-section">
+
+        <div class="related-title">
+
+          <h2>
+            You May Also Like
+          </h2>
+
+        </div>
+
+
+        <div
+          class="related-products"
+          id="relatedProducts"
+        ></div>
+
+      </section>
+
+    </section>
+
+
+    <!-- =================================================
+         ERROR
+    ================================================== -->
+
+    <section
+      class="details-error"
+      id="detailsError"
+      hidden
+    >
+
+      <div class="error-icon">
+
+        <i class="fa-solid fa-box-open"></i>
+
+      </div>
+
+
+      <h2>
+        Product Not Found
+      </h2>
+
+
+      <p id="errorMessage">
+        This product may have been removed or is no longer available.
+      </p>
+
+
+      <button
+        id="goHomeButton"
+        type="button"
+      >
+        Back to Home
+      </button>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       STICKY BUY BAR
+  ====================================================== -->
+
+  <div class="sticky-buy-bar">
+
+    <button
+      class="add-cart-btn"
+      id="addToCartButton"
+      type="button"
+    >
+
+      <i class="fa-solid fa-cart-plus"></i>
+
+      <span>
+        Add to Cart
+      </span>
+
+    </button>
+
+
+    <button
+      class="buy-now-btn"
+      id="buyNowButton"
+      type="button"
+    >
+
+      <i class="fa-solid fa-bag-shopping"></i>
+
+      <span>
+        Buy Now
+      </span>
+
+    </button>
+
+  </div>
+
+
+  <script type="module" src="product-details.js"></script>
+
+</div>
+
+</body>
+</html>

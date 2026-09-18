@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Bazvor — Messages</title>
+
+
+  <!-- FONT -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+
+  <!-- MESSAGE -->
+
+  <link
+    rel="stylesheet"
+    href="message.css"
+  >
+
+
+  <!-- SHARED BOTTOM NAV -->
+
+  <link
+    rel="stylesheet"
+    href="bottom-nav.css"
+  >
+
+</head>
+
+
+<body>
+
+<div class="message-app">
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="message-header">
+
+    <button
+      class="header-button"
+      id="backButton"
+      type="button"
+      aria-label="Back"
+    >
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+
+    <div class="message-header-title">
+
+      <h1>
+        Messages
+      </h1>
+
+      <span
+        id="headerUnreadCount"
+        hidden
+      >
+        0 unread
+      </span>
+
+    </div>
+
+
+    <button
+      class="header-button"
+      id="headerSupportButton"
+      type="button"
+      aria-label="Help and support"
+    >
+      <i class="fa-solid fa-headset"></i>
+    </button>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main class="message-main">
+
+
+    <!-- ===================================================
+         SEARCH
+    ==================================================== -->
+
+    <section
+      class="message-search-section"
+      id="messageSearchSection"
+    >
+
+      <div class="message-search">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+
+        <input
+          type="search"
+          id="messageSearchInput"
+          placeholder="Search messages..."
+          autocomplete="off"
+        >
+
+
+        <button
+          id="clearSearchButton"
+          type="button"
+          aria-label="Clear search"
+          hidden
+        >
+
+          <i class="fa-solid fa-circle-xmark"></i>
+
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         LOADING
+    ==================================================== -->
+
+    <section
+      class="message-state"
+      id="messageLoading"
+    >
+
+      <div class="message-spinner"></div>
+
+      <p>
+        Loading messages...
+      </p>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         GUEST
+    ==================================================== -->
+
+    <section
+      class="message-state message-guest"
+      id="guestState"
+      hidden
+    >
+
+      <div class="state-icon">
+
+        <i class="fa-regular fa-comments"></i>
+
+      </div>
+
+
+      <h2>
+        Your messages are waiting
+      </h2>
+
+
+      <p>
+        Login to chat with sellers, view your conversations
+        and contact Bazvor Support.
+      </p>
+
+
+      <button
+        class="primary-state-button"
+        id="guestLoginButton"
+        type="button"
+      >
+
+        <i class="fa-regular fa-user"></i>
+
+        Login / Sign Up
+
+      </button>
+
+
+      <button
+        class="secondary-state-button"
+        id="guestSupportButton"
+        type="button"
+      >
+
+        <i class="fa-solid fa-headset"></i>
+
+        Help Center
+
+      </button>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         CONVERSATIONS
+    ==================================================== -->
+
+    <section
+      class="conversation-section"
+      id="conversationSection"
+      hidden
+    >
+
+
+      <!-- HEADER -->
+
+      <div class="conversation-heading">
+
+        <div>
+
+          <h2>
+            Conversations
+          </h2>
+
+          <p id="conversationSummary">
+            Your recent messages
+          </p>
+
+        </div>
+
+
+        <button
+          class="mark-read-button"
+          id="markAllReadButton"
+          type="button"
+          hidden
+        >
+
+          Mark all read
+
+        </button>
+
+      </div>
+
+
+
+      <!-- LIST -->
+
+      <div
+        class="conversation-list"
+        id="conversationList"
+      ></div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         EMPTY
+    ==================================================== -->
+
+    <section
+      class="message-state"
+      id="emptyState"
+      hidden
+    >
+
+      <div class="state-icon">
+
+        <i class="fa-regular fa-message"></i>
+
+      </div>
+
+
+      <h2>
+        No messages yet
+      </h2>
+
+
+      <p>
+        When you contact a seller or Bazvor Support,
+        your conversations will appear here.
+      </p>
+
+
+      <button
+        class="primary-state-button"
+        id="startShoppingButton"
+        type="button"
+      >
+
+        <i class="fa-solid fa-bag-shopping"></i>
+
+        Start Shopping
+
+      </button>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         SEARCH EMPTY
+    ==================================================== -->
+
+    <section
+      class="message-state compact-state"
+      id="searchEmptyState"
+      hidden
+    >
+
+      <div class="state-icon small">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+      </div>
+
+
+      <h2>
+        No conversation found
+      </h2>
+
+
+      <p>
+        Try another name or message.
+      </p>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         ERROR
+    ==================================================== -->
+
+    <section
+      class="message-state"
+      id="errorState"
+      hidden
+    >
+
+      <div class="state-icon error">
+
+        <i class="fa-solid fa-triangle-exclamation"></i>
+
+      </div>
+
+
+      <h2>
+        Unable to load messages
+      </h2>
+
+
+      <p id="errorMessage">
+        Please check your internet connection and try again.
+      </p>
+
+
+      <button
+        class="primary-state-button"
+        id="retryButton"
+        type="button"
+      >
+        Try Again
+      </button>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FLOATING SUPPORT
+  ====================================================== -->
+
+  <button
+    class="floating-support"
+    id="floatingSupport"
+    type="button"
+    aria-label="Bazvor Support"
+  >
+
+    <i class="fa-solid fa-headset"></i>
+
+    <span>
+      Support
+    </span>
+
+  </button>
+
+
+</div>
+
+
+
+<!-- MESSAGE LOGIC -->
+
+<script
+  type="module"
+  src="message.js"
+></script>
+
+
+<!-- SHARED BOTTOM NAV -->
+
+<script
+  src="bottom-nav.js"
+></script>
+
+
+</body>
+
+</html>

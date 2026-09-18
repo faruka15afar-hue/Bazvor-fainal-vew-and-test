@@ -1,0 +1,2537 @@
+/* =========================================================
+   BAZVOR — ACCOUNT PAGE
+   PREMIUM FINAL RESPONSIVE DESIGN
+========================================================= */
+
+:root {
+    --bazvor: #e5006d;
+    --bazvor-dark: #cc005f;
+
+    --pink-1: #fff7fb;
+    --pink-2: #ffedf5;
+    --pink-3: #ffe3ef;
+
+    --text: #15263a;
+    --text-2: #657587;
+    --text-3: #84909d;
+
+    --white: #ffffff;
+    --bg: #fafbfc;
+
+    --border: #edf0f4;
+
+    --header-height: 68px;
+    --bottom-nav-height: 70px;
+
+    --radius: 16px;
+
+    --soft-shadow:
+        0 4px 18px rgba(20, 35, 56, 0.045);
+
+    --card-shadow:
+        0 5px 22px rgba(20, 35, 56, 0.055);
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff7fb 0%,
+            #ffffff 48%,
+            #fff4f9 100%
+        );
+
+    color: var(--text);
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   PAGE WRAPPER
+========================================================= */
+
+.account-page {
+    width: 100%;
+    max-width: 620px;
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #fafbfc 100%
+        );
+
+    position: relative;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.account-header {
+    height: var(--header-height);
+
+    padding:
+        0 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed006f 0%,
+            #e5006d 55%,
+            #f00075 100%
+        );
+
+    color: #ffffff;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+
+    box-shadow:
+        0 4px 16px
+        rgba(229, 0, 109, 0.16);
+}
+
+
+/* LEFT */
+
+.header-left {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+.back-btn,
+.settings-btn {
+    width: 43px;
+    height: 43px;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    color: #ffffff;
+}
+
+
+.back-btn svg {
+    width: 28px;
+    height: 28px;
+
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 2.25;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.settings-btn svg {
+    width: 29px;
+    height: 29px;
+
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 1.9;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* LOGO */
+
+.header-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #ffffff;
+
+    font-size: 24px;
+    font-weight: 850;
+
+    letter-spacing: -1px;
+
+    line-height: 1;
+}
+
+
+.logo-icon {
+    width: 27px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.logo-icon svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 1.9;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.account-content {
+    padding:
+        18px
+        17px
+        calc(
+            var(--bottom-nav-height) + 30px
+        );
+}
+
+
+/* =========================================================
+   PROFILE CARD
+========================================================= */
+
+.profile-card {
+    width: 100%;
+
+    min-height: 174px;
+
+    padding:
+        15px 14px 15px 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 17px;
+
+    border: 1px solid
+        rgba(229, 0, 109, 0.09);
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8fb 0%,
+            #ffedf5 53%,
+            #ffe4f0 100%
+        );
+
+    box-shadow: var(--card-shadow);
+}
+
+
+.profile-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -85px;
+    top: -90px;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 43%,
+            rgba(255,255,255,.46) 44%,
+            rgba(255,255,255,.46) 53%,
+            transparent 54%
+        );
+
+    transform: rotate(7deg);
+
+    pointer-events: none;
+}
+
+
+.profile-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -100px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.16);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PROFILE AVATAR
+========================================================= */
+
+.profile-avatar {
+    width: 106px;
+    height: 106px;
+
+    min-width: 106px;
+
+    border-radius: 50%;
+
+    border:
+        3px solid var(--bazvor);
+
+    background: #ffffff;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3;
+}
+
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: none;
+}
+
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f4f7fa,
+            #e8edf2
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.avatar-placeholder svg {
+    width: 58px;
+    height: 58px;
+
+    fill: none;
+
+    stroke: #9aa8b7;
+    stroke-width: 1.45;
+
+    stroke-linecap: round;
+}
+
+
+/* CAMERA */
+
+.camera-btn {
+    position: absolute;
+
+    right: -4px;
+    bottom: -1px;
+
+    width: 37px;
+    height: 37px;
+
+    border:
+        3px solid #ffffff;
+
+    border-radius: 50%;
+
+    background:
+        var(--bazvor);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    box-shadow:
+        0 3px 9px
+        rgba(229, 0, 109, .18);
+}
+
+
+.camera-btn svg {
+    width: 19px;
+    height: 19px;
+
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   PROFILE INFORMATION
+========================================================= */
+
+.profile-info {
+    min-width: 0;
+
+    flex: 1;
+
+    position: relative;
+
+    z-index: 4;
+}
+
+
+.profile-name-row {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 7px;
+}
+
+
+.profile-name-row h1 {
+    font-size: 20px;
+    line-height: 1.15;
+
+    font-weight: 750;
+
+    color: var(--text);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.verified-badge {
+    width: 20px;
+    height: 20px;
+
+    min-width: 20px;
+}
+
+
+.verified-badge svg {
+    width: 100%;
+    height: 100%;
+
+    fill: var(--bazvor);
+
+    stroke: #ffffff;
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.profile-detail {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 6px;
+
+    color: #334457;
+
+    font-size: 13.5px;
+
+    white-space: nowrap;
+}
+
+
+.profile-detail svg {
+    width: 19px;
+    height: 19px;
+
+    min-width: 19px;
+
+    fill: none;
+
+    stroke: #26384c;
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* EDIT BUTTON */
+
+.edit-profile-btn {
+    height: 39px;
+
+    margin-top: 11px;
+
+    padding:
+        0 15px;
+
+    border:
+        1.5px solid var(--bazvor);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255,255,255,.82);
+
+    color: var(--bazvor);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.edit-profile-btn svg {
+    width: 18px;
+    height: 18px;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* PROFILE ARROW */
+
+.profile-arrow {
+    width: 27px;
+    height: 45px;
+
+    flex: 0 0 27px;
+
+    border: 0;
+
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+.profile-arrow svg {
+    width: 25px;
+    height: 25px;
+
+    fill: none;
+
+    stroke: var(--text);
+    stroke-width: 2.2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   QUICK STATS
+========================================================= */
+
+.quick-stats {
+    margin-top: 17px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 9px;
+}
+
+
+.stat-card {
+    width: 100%;
+
+    min-height: 113px;
+
+    padding:
+        10px 4px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 3px 14px
+        rgba(20, 35, 56, .035);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    color: var(--text);
+
+    cursor: pointer;
+}
+
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff1f7,
+            #ffe5f0
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 2px;
+}
+
+
+.stat-icon svg {
+    width: 27px;
+    height: 27px;
+
+    fill: none;
+
+    stroke: var(--bazvor);
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.stat-card strong {
+    font-size: 13.5px;
+
+    line-height: 1.2;
+
+    font-weight: 650;
+
+    white-space: nowrap;
+}
+
+
+.stat-card small {
+    font-size: 14px;
+
+    line-height: 1;
+
+    color: #718090;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   TRACK ORDER BANNER
+========================================================= */
+
+.track-banner {
+    width: 100%;
+
+    min-height: 101px;
+
+    margin-top: 20px;
+
+    padding:
+        12px 13px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            105deg,
+            #e5006d 0%,
+            #ee0072 52%,
+            #f00076 100%
+        );
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 22px
+        rgba(229, 0, 109, .15);
+}
+
+
+.track-banner::before {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 75px;
+
+    right: 20px;
+    bottom: -31px;
+
+    border:
+        2px dashed
+        rgba(255,255,255,.18);
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-10deg);
+
+    pointer-events: none;
+}
+
+
+.track-banner::after {
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    right: -42px;
+    top: -42px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,.06);
+
+    pointer-events: none;
+}
+
+
+/* TRACK ICON */
+
+.track-icon {
+    width: 50px;
+    height: 50px;
+
+    min-width: 50px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,.13);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.track-icon svg {
+    width: 30px;
+    height: 30px;
+
+    fill: none;
+
+    stroke: #ffffff;
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* TEXT */
+
+.track-info {
+    min-width: 0;
+
+    flex: 1;
+
+    margin-left: 12px;
+
+    position: relative;
+
+    z-index: 4;
+}
+
+
+.track-info h2 {
+    font-size: 18px;
+
+    line-height: 1.15;
+
+    font-weight: 750;
+
+    margin-bottom: 5px;
+}
+
+
+.track-info p {
+    font-size: 11.5px;
+
+    line-height: 1.3;
+
+    opacity: .92;
+
+    white-space: nowrap;
+}
+
+
+/* ROUTE */
+
+.track-route {
+    position: absolute;
+
+    right: 88px;
+    bottom: 13px;
+
+    width: 82px;
+    height: 40px;
+
+    z-index: 1;
+
+    opacity: .9;
+}
+
+
+.route-line {
+    position: absolute;
+
+    width: 57px;
+    height: 28px;
+
+    left: 7px;
+    top: 7px;
+
+    border-top:
+        2px dashed
+        rgba(255,255,255,.2);
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-7deg);
+}
+
+
+.route-dot {
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    left: 0;
+    bottom: 3px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.7);
+}
+
+
+.route-pin {
+    position: absolute;
+
+    right: 0;
+    top: 0;
+}
+
+
+.route-pin svg {
+    width: 23px;
+    height: 23px;
+
+    fill: none;
+
+    stroke:
+        rgba(255,255,255,.48);
+
+    stroke-width: 1.6;
+}
+
+
+/* TRACK BUTTON */
+
+.track-btn {
+    height: 40px;
+
+    padding:
+        0 12px 0 15px;
+
+    border: none;
+
+    border-radius: 24px;
+
+    background:
+        #ffffff;
+
+    color:
+        var(--bazvor);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    font-size: 13.5px;
+
+    font-weight: 750;
+
+    white-space: nowrap;
+
+    position: relative;
+
+    z-index: 5;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,.05);
+}
+
+
+.track-btn svg {
+    width: 17px;
+    height: 17px;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   ACCOUNT MENU
+========================================================= */
+
+.menu-section {
+    margin-top: 22px;
+}
+
+
+.section-title {
+    margin-bottom: 10px;
+
+    color:
+        #718091;
+
+    font-size: 18px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+}
+
+
+.menu-card {
+    width: 100%;
+
+    padding:
+        0 13px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 4px 18px
+        rgba(20, 35, 56, .035);
+}
+
+
+/* MENU ITEM */
+
+.menu-item {
+    width: 100%;
+
+    min-height: 73px;
+
+    border: 0;
+
+    border-bottom:
+        1px solid var(--border);
+
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    text-align: left;
+
+    color: var(--text);
+
+    cursor: pointer;
+}
+
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+
+/* MENU ICON */
+
+.menu-icon {
+    width: 47px;
+    height: 47px;
+
+    min-width: 47px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff1f7,
+            #ffe5f0
+        );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.menu-icon svg {
+    width: 26px;
+    height: 26px;
+
+    fill: none;
+
+    stroke:
+        var(--bazvor);
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* MENU TEXT */
+
+.menu-text {
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.menu-text strong {
+    font-size: 15px;
+
+    line-height: 1.2;
+
+    font-weight: 650;
+
+    color: var(--text);
+}
+
+
+.menu-text small {
+    font-size: 12px;
+
+    line-height: 1.25;
+
+    color:
+        #7b8998;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* ARROW */
+
+.menu-arrow {
+    width: 21px;
+    height: 21px;
+
+    min-width: 21px;
+
+    fill: none;
+
+    stroke:
+        #7d8a97;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   SELLER BANNER
+========================================================= */
+
+.seller-banner {
+    width: 100%;
+
+    min-height: 82px;
+
+    margin-top: 18px;
+
+    padding:
+        12px 13px;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            100deg,
+            #fff1f7,
+            #ffe7f1
+        );
+
+    border:
+        1px solid
+        rgba(229,0,109,.08);
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+
+.seller-icon {
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.seller-icon svg {
+    width: 27px;
+    height: 27px;
+
+    fill: none;
+
+    stroke:
+        var(--bazvor);
+
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.seller-text {
+    margin-left: 12px;
+
+    min-width: 0;
+
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    position: relative;
+
+    z-index: 3;
+}
+
+
+.seller-text strong {
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+
+.seller-text small {
+    font-size: 11.5px;
+
+    color:
+        #6f7d8d;
+}
+
+
+.seller-shop {
+    position: absolute;
+
+    right: 38px;
+    bottom: -6px;
+
+    opacity: .86;
+
+    z-index: 1;
+}
+
+
+.seller-shop svg {
+    width: 80px;
+    height: 62px;
+
+    fill: none;
+
+    stroke:
+        var(--bazvor);
+
+    stroke-width: 1.45;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.seller-arrow {
+    width: 20px;
+    height: 20px;
+
+    min-width: 20px;
+
+    fill: none;
+
+    stroke:
+        #748292;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    position: relative;
+
+    z-index: 4;
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+.logout-btn {
+    width: 100%;
+
+    min-height: 57px;
+
+    margin-top: 12px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 15px;
+
+    background:
+        #ffffff;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color:
+        var(--bazvor);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 15px
+        rgba(20,35,56,.025);
+}
+
+
+.logout-icon {
+    width: 43px;
+    height: 43px;
+
+    min-width: 43px;
+
+    border-radius: 12px;
+
+    background:
+        #fff0f7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.logout-icon svg {
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+
+    stroke:
+        var(--bazvor);
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+.logout-arrow {
+    width: 20px;
+    height: 20px;
+
+    margin-left: auto;
+
+    fill: none;
+
+    stroke:
+        #7b8998;
+
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
+
+.bottom-nav {
+    width:
+        min(
+            620px,
+            100%
+        );
+
+    height:
+        var(--bottom-nav-height);
+
+    position: fixed;
+
+    left: 50%;
+    bottom: 0;
+
+    transform:
+        translateX(-50%);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    background:
+        rgba(255,255,255,.97);
+
+    border-top:
+        1px solid #e9edf1;
+
+    z-index: 200;
+
+    padding-bottom:
+        env(safe-area-inset-bottom);
+
+    box-shadow:
+        0 -4px 18px
+        rgba(20,35,56,.045);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+}
+
+
+.bottom-nav-item {
+    min-width: 0;
+
+    position: relative;
+
+    text-decoration: none;
+
+    color:
+        #687787;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 3px;
+
+    font-size: 11.5px;
+
+    font-weight: 500;
+}
+
+
+.bottom-nav-item.active {
+    color:
+        var(--bazvor);
+
+    font-weight: 700;
+}
+
+
+.nav-icon {
+    width: 27px;
+    height: 27px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nav-icon svg {
+    width: 24px;
+    height: 24px;
+
+    fill: none;
+
+    stroke:
+        currentColor;
+
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* ACTIVE UNDERLINE */
+
+.bottom-nav-item.active::after {
+    content: "";
+
+    position: absolute;
+
+    width: 54px;
+    height: 3px;
+
+    left: 50%;
+
+    bottom: 1px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 5px;
+
+    background:
+        var(--bazvor);
+}
+
+
+/* MESSAGE DOT */
+
+.nav-dot {
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    top: -1px;
+    right: -1px;
+
+    border-radius: 50%;
+
+    background:
+        var(--bazvor);
+
+    border:
+        2px solid #ffffff;
+}
+
+
+/* CART BADGE */
+
+.cart-badge {
+    position: absolute;
+
+    min-width: 18px;
+    height: 18px;
+
+    top: -8px;
+    right: -8px;
+
+    padding:
+        0 4px;
+
+    border-radius: 10px;
+
+    background:
+        var(--bazvor);
+
+    border:
+        2px solid #ffffff;
+
+    color:
+        #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   EDIT PROFILE MODAL
+========================================================= */
+
+.modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    background:
+        rgba(13,22,33,.45);
+
+    backdrop-filter:
+        blur(5px);
+
+    -webkit-backdrop-filter:
+        blur(5px);
+
+    z-index: 500;
+}
+
+
+.modal-overlay.show {
+    display: flex;
+}
+
+
+.edit-modal {
+    width:
+        min(
+            620px,
+            100%
+        );
+
+    background:
+        #ffffff;
+
+    border-radius:
+        23px 23px 0 0;
+
+    padding:
+        24px
+        20px
+        calc(
+            24px +
+            env(safe-area-inset-bottom)
+        );
+
+    position: relative;
+
+    animation:
+        modalUp .25s ease;
+}
+
+
+@keyframes modalUp {
+
+    from {
+        transform:
+            translateY(100%);
+    }
+
+    to {
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+.modal-close {
+    position: absolute;
+
+    top: 15px;
+    right: 16px;
+
+    width: 36px;
+    height: 36px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        #f3f5f7;
+
+    color:
+        #657384;
+
+    font-size: 24px;
+
+    cursor: pointer;
+}
+
+
+.edit-modal h2 {
+    font-size: 22px;
+
+    margin-bottom: 5px;
+}
+
+
+.edit-modal > p {
+    color:
+        #7b8998;
+
+    font-size: 13px;
+
+    margin-bottom: 18px;
+}
+
+
+.edit-modal label {
+    display: block;
+
+    color:
+        #26384b;
+
+    font-size: 13px;
+
+    font-weight: 650;
+
+    margin-top: 13px;
+}
+
+
+.edit-modal input {
+    width: 100%;
+
+    height: 47px;
+
+    margin-top: 7px;
+
+    padding:
+        0 13px;
+
+    border:
+        1px solid #e0e5ea;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    color:
+        var(--text);
+
+    font-size: 14px;
+
+    background:
+        #ffffff;
+}
+
+
+.edit-modal input:focus {
+    border-color:
+        var(--bazvor);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(229,0,109,.08);
+}
+
+
+.save-profile-btn {
+    width: 100%;
+
+    height: 49px;
+
+    margin-top: 21px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background:
+        var(--bazvor);
+
+    color:
+        #ffffff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TOUCH EFFECT
+========================================================= */
+
+button,
+a {
+    transition:
+        transform .15s ease,
+        opacity .15s ease,
+        background .15s ease;
+}
+
+
+button:active,
+a:active {
+    transform:
+        scale(.975);
+}
+
+
+/* =========================================================
+   480px AND BELOW
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .account-content {
+        padding:
+            16px
+            13px
+            calc(
+                var(--bottom-nav-height) + 27px
+            );
+    }
+
+
+    .account-header {
+        height: 66px;
+
+        padding:
+            0 10px;
+    }
+
+
+    .header-logo {
+        font-size: 23px;
+    }
+
+
+    .profile-card {
+        min-height: 166px;
+
+        padding:
+            13px 12px;
+
+        gap: 11px;
+    }
+
+
+    .profile-avatar {
+        width: 96px;
+        height: 96px;
+
+        min-width: 96px;
+    }
+
+
+    .camera-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+
+    .profile-name-row h1 {
+        font-size: 18px;
+    }
+
+
+    .verified-badge {
+        width: 18px;
+        height: 18px;
+
+        min-width: 18px;
+    }
+
+
+    .profile-detail {
+        font-size: 12px;
+
+        gap: 6px;
+    }
+
+
+    .profile-detail svg {
+        width: 18px;
+        height: 18px;
+
+        min-width: 18px;
+    }
+
+
+    .edit-profile-btn {
+        height: 37px;
+
+        padding:
+            0 13px;
+
+        margin-top: 9px;
+
+        font-size: 13px;
+    }
+
+
+    .profile-arrow {
+        width: 24px;
+
+        min-width: 24px;
+    }
+
+
+    .quick-stats {
+        margin-top: 15px;
+
+        gap: 7px;
+    }
+
+
+    .stat-card {
+        min-height: 108px;
+
+        border-radius: 14px;
+    }
+
+
+    .stat-icon {
+        width: 47px;
+        height: 47px;
+
+        border-radius: 13px;
+    }
+
+
+    .stat-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .stat-card strong {
+        font-size: 12px;
+    }
+
+
+    .stat-card small {
+        font-size: 13px;
+    }
+
+
+    .track-banner {
+        min-height: 98px;
+
+        margin-top: 18px;
+
+        padding:
+            11px;
+    }
+
+
+    .track-icon {
+        width: 47px;
+        height: 47px;
+
+        min-width: 47px;
+    }
+
+
+    .track-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+
+    .track-info {
+        margin-left: 9px;
+    }
+
+
+    .track-info h2 {
+        font-size: 16px;
+    }
+
+
+    .track-info p {
+        font-size: 10px;
+    }
+
+
+    .track-btn {
+        height: 38px;
+
+        padding:
+            0 10px 0 12px;
+
+        font-size: 12px;
+    }
+
+
+    .track-route {
+        right: 82px;
+    }
+
+
+    .menu-section {
+        margin-top: 20px;
+    }
+
+
+    .section-title {
+        font-size: 17px;
+
+        margin-bottom: 9px;
+    }
+
+
+    .menu-card {
+        padding:
+            0 11px;
+    }
+
+
+    .menu-item {
+        min-height: 70px;
+
+        gap: 10px;
+    }
+
+
+    .menu-icon {
+        width: 44px;
+        height: 44px;
+
+        min-width: 44px;
+
+        border-radius: 12px;
+    }
+
+
+    .menu-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
+
+    .menu-text strong {
+        font-size: 14px;
+    }
+
+
+    .menu-text small {
+        font-size: 11px;
+    }
+
+
+    .seller-banner {
+        min-height: 78px;
+
+        margin-top: 16px;
+    }
+
+
+    .seller-icon {
+        width: 45px;
+        height: 45px;
+
+        min-width: 45px;
+    }
+
+
+    .seller-text {
+        margin-left: 10px;
+    }
+
+
+    .seller-text strong {
+        font-size: 14px;
+    }
+
+
+    .seller-text small {
+        font-size: 10.5px;
+    }
+
+
+    .seller-shop {
+        right: 34px;
+    }
+
+
+    .seller-shop svg {
+        width: 72px;
+        height: 58px;
+    }
+
+
+    .logout-btn {
+        min-height: 55px;
+
+        margin-top: 11px;
+    }
+
+
+    .logout-icon {
+        width: 41px;
+        height: 41px;
+
+        min-width: 41px;
+    }
+
+
+    .bottom-nav {
+        height: 68px;
+    }
+
+
+    .bottom-nav-item {
+        font-size: 11px;
+    }
+
+
+    .bottom-nav-item.active::after {
+        width: 52px;
+    }
+
+}
+
+
+/* =========================================================
+   390px AND BELOW
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .account-content {
+        padding-left: 11px;
+        padding-right: 11px;
+    }
+
+
+    .profile-card {
+        min-height: 158px;
+
+        padding:
+            11px;
+
+        gap: 9px;
+    }
+
+
+    .profile-avatar {
+        width: 87px;
+        height: 87px;
+
+        min-width: 87px;
+    }
+
+
+    .avatar-placeholder svg {
+        width: 51px;
+        height: 51px;
+    }
+
+
+    .camera-btn {
+        width: 33px;
+        height: 33px;
+    }
+
+
+    .camera-btn svg {
+        width: 17px;
+        height: 17px;
+    }
+
+
+    .profile-name-row {
+        gap: 4px;
+    }
+
+
+    .profile-name-row h1 {
+        font-size: 16px;
+    }
+
+
+    .profile-detail {
+        font-size: 11px;
+
+        margin-top: 5px;
+    }
+
+
+    .profile-detail svg {
+        width: 16px;
+        height: 16px;
+
+        min-width: 16px;
+    }
+
+
+    .edit-profile-btn {
+        height: 34px;
+
+        padding:
+            0 11px;
+
+        font-size: 12px;
+
+        margin-top: 7px;
+    }
+
+
+    .edit-profile-btn svg {
+        width: 16px;
+        height: 16px;
+    }
+
+
+    .quick-stats {
+        gap: 5px;
+    }
+
+
+    .stat-card {
+        min-height: 101px;
+    }
+
+
+    .stat-icon {
+        width: 43px;
+        height: 43px;
+
+        border-radius: 12px;
+    }
+
+
+    .stat-icon svg {
+        width: 23px;
+        height: 23px;
+    }
+
+
+    .stat-card strong {
+        font-size: 10.5px;
+    }
+
+
+    .stat-card small {
+        font-size: 12px;
+    }
+
+
+    .track-banner {
+        min-height: 91px;
+
+        padding:
+            9px;
+    }
+
+
+    .track-icon {
+        width: 43px;
+        height: 43px;
+
+        min-width: 43px;
+
+        border-radius: 12px;
+    }
+
+
+    .track-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .track-info {
+        margin-left: 8px;
+    }
+
+
+    .track-info h2 {
+        font-size: 14px;
+    }
+
+
+    .track-info p {
+        font-size: 9px;
+    }
+
+
+    .track-btn {
+        height: 35px;
+
+        padding:
+            0 8px 0 10px;
+
+        font-size: 10.5px;
+    }
+
+
+    .track-btn svg {
+        width: 15px;
+        height: 15px;
+    }
+
+
+    .track-route {
+        display: none;
+    }
+
+
+    .menu-item {
+        min-height: 66px;
+    }
+
+
+    .menu-icon {
+        width: 41px;
+        height: 41px;
+
+        min-width: 41px;
+    }
+
+
+    .menu-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+
+    .menu-text strong {
+        font-size: 13px;
+    }
+
+
+    .menu-text small {
+        font-size: 10px;
+    }
+
+
+    .menu-arrow {
+        width: 19px;
+        height: 19px;
+    }
+
+
+    .seller-banner {
+        min-height: 72px;
+    }
+
+
+    .seller-icon {
+        width: 41px;
+        height: 41px;
+
+        min-width: 41px;
+    }
+
+
+    .seller-icon svg {
+        width: 23px;
+        height: 23px;
+    }
+
+
+    .seller-text strong {
+        font-size: 13px;
+    }
+
+
+    .seller-text small {
+        font-size: 9.5px;
+    }
+
+
+    .seller-shop {
+        display: none;
+    }
+
+
+    .logout-btn {
+        min-height: 53px;
+
+        font-size: 14px;
+    }
+
+
+    .logout-icon {
+        width: 39px;
+        height: 39px;
+
+        min-width: 39px;
+    }
+
+
+    .bottom-nav-item {
+        font-size: 10px;
+    }
+
+
+    .nav-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .nav-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+}
+
+
+/* =========================================================
+   360px AND BELOW
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .header-logo {
+        font-size: 21px;
+    }
+
+
+    .back-btn,
+    .settings-btn {
+        width: 39px;
+        height: 39px;
+    }
+
+
+    .profile-card {
+        min-height: 150px;
+    }
+
+
+    .profile-avatar {
+        width: 82px;
+        height: 82px;
+
+        min-width: 82px;
+    }
+
+
+    .profile-name-row h1 {
+        font-size: 15px;
+    }
+
+
+    .profile-detail {
+        font-size: 10px;
+    }
+
+
+    .edit-profile-btn {
+        height: 32px;
+
+        padding:
+            0 9px;
+
+        font-size: 11px;
+    }
+
+
+    .stat-card {
+        min-height: 96px;
+    }
+
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .stat-card strong {
+        font-size: 9.5px;
+    }
+
+
+    .track-info h2 {
+        font-size: 13px;
+    }
+
+
+    .track-btn {
+        font-size: 10px;
+    }
+
+}

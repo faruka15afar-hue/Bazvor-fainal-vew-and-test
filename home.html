@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <title>Bazvor — Shop Everything</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="home.css">
+
+</head>
+
+
+<body>
+
+<div class="bazvor-app">
+
+
+  <!-- =====================================================
+       SHARED BACKGROUND
+  ====================================================== -->
+
+  <div
+    class="home-background-system"
+    id="homeBackgroundSystem"
+    aria-hidden="true"
+  >
+
+    <div
+      class="home-background-layer background-layer-a"
+      id="backgroundLayerA"
+    ></div>
+
+    <div
+      class="home-background-layer background-layer-b"
+      id="backgroundLayerB"
+    ></div>
+
+  </div>
+
+
+  <!-- =====================================================
+       TOP AREA
+  ====================================================== -->
+
+  <div class="home-top-area">
+
+
+    <!-- ===================================================
+         HEADER
+    ==================================================== -->
+
+    <header class="main-header">
+
+      <div class="header-search-wrap">
+
+        <div class="search-box">
+
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search products, brands and more..."
+            autocomplete="off"
+          >
+
+          <button
+            class="camera-button"
+            id="cameraButton"
+            type="button"
+            aria-label="Visual Search"
+          >
+
+            <i class="fa-solid fa-camera"></i>
+
+          </button>
+
+        </div>
+
+
+        <div
+          class="search-results"
+          id="searchResults"
+        ></div>
+
+      </div>
+
+
+      <!-- TOP CATEGORIES -->
+
+      <nav class="top-category-nav">
+
+        <div
+          class="top-category-scroll"
+          id="topCategoryScroll"
+        >
+
+          <button
+            class="top-category active"
+            data-category="All"
+            type="button"
+          >
+            All
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Men"
+            type="button"
+          >
+            Men
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Women"
+            type="button"
+          >
+            Women
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Phones"
+            type="button"
+          >
+            Phones
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Watches"
+            type="button"
+          >
+            Watches
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Groceries"
+            type="button"
+          >
+            Groceries
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Beauty"
+            type="button"
+          >
+            Beauty
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Home"
+            type="button"
+          >
+            Home
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Sports"
+            type="button"
+          >
+            Sports
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Agriculture"
+            type="button"
+          >
+            Agriculture
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Automotive"
+            type="button"
+          >
+            Automotive
+          </button>
+
+          <button
+            class="top-category"
+            data-category="Kids"
+            type="button"
+          >
+            Kids
+          </button>
+
+        </div>
+
+      </nav>
+
+    </header>
+
+
+    <!-- ===================================================
+         MAIN
+    ==================================================== -->
+
+    <main class="main-content">
+
+
+      <!-- =================================================
+           HERO
+      ================================================== -->
+
+      <section class="promo-section">
+
+        <div
+          class="promo-slider"
+          id="promoSlider"
+        >
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           LARGE QUICK ACTION CARDS
+           FIREBASE DYNAMIC
+      ================================================== -->
+
+      <section class="quick-actions-section">
+
+        <div
+          class="quick-actions-scroll"
+          id="homeQuickActions"
+        >
+
+          <!--
+            Firebase cards will be inserted here.
+          -->
+
+          <div
+            class="quick-card-loading"
+            id="quickCardLoading"
+          >
+
+            <div class="quick-card-spinner"></div>
+
+            <span>
+              Loading...
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           MINI PROMO
+      ================================================== -->
+<!-- =================================================
+     MINI DISCOVERY / OPTIONS
+     FIREBASE DYNAMIC
+================================================== -->
+
+<!-- =================================================
+     MINI BANNER
+     FIREBASE DYNAMIC
+================================================== -->
+
+<section class="mini-promo-section">
+
+  <div
+    id="miniPromoBanner"
+    class="mini-promo-banner"
+  >
+
+    <div class="mini-banner-empty">
+
+      <span>
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        &nbsp;
+        Loading mini banner...
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =================================================
+     MINI DISCOVERY / OPTIONS
+     FIREBASE DYNAMIC
+================================================== -->
+
+<section class="mini-discovery-section">
+
+  <div
+    class="mini-discovery-scroll"
+    id="miniDiscoveryScroll"
+  >
+
+    <div
+      class="mini-discovery-loading"
+      id="miniDiscoveryLoading"
+    >
+
+      <div class="mini-discovery-spinner"></div>
+
+      <span>
+        Loading...
+      </span>
+
+    </div>
+
+  </div>
+
+</section>
+      
+
+
+      <!-- =================================================
+           FLASH SELL
+      ================================================== -->
+
+      <section class="flash-sale-section">
+
+        <div class="flash-header">
+
+          <div class="flash-title">
+
+            <span class="flash-bolt">
+
+              <i class="fa-solid fa-bolt"></i>
+
+            </span>
+
+            <h2>
+              Flash Sell
+            </h2>
+
+          </div>
+
+
+          <div class="flash-countdown">
+
+            <div class="flash-time-box">
+
+              <span id="flashHours">
+                08
+              </span>
+
+              <small>
+                H
+              </small>
+
+            </div>
+
+            <b>:</b>
+
+            <div class="flash-time-box">
+
+              <span id="flashMinutes">
+                00
+              </span>
+
+              <small>
+                M
+              </small>
+
+            </div>
+
+            <b>:</b>
+
+            <div class="flash-time-box">
+
+              <span id="flashSeconds">
+                00
+              </span>
+
+              <small>
+                S
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="flash-product-scroll flash-loading"
+          id="flashProducts"
+        ></div>
+
+
+        <div class="flash-see-all-wrap">
+
+          <button
+            class="flash-see-all"
+            id="flashSeeAll"
+            type="button"
+          >
+
+            <span>
+              See All
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================
+           RECOMMENDED
+      ================================================== -->
+
+      <section class="all-products-section content-section">
+
+        <div class="section-header">
+
+          <div>
+
+            <span class="section-mini-title">
+              Discover
+            </span>
+
+            <h2>
+              Recommended For You
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="product-grid product-loading"
+          id="productGrid"
+        ></div>
+
+
+        <button
+          class="load-more-button"
+          id="loadMoreProducts"
+          type="button"
+        >
+
+          Load More Products
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =====================================================
+       BOTTOM NAVIGATION
+  ====================================================== -->
+
+  <nav class="bottom-navigation">
+
+    <a
+      href="home.html"
+      class="bottom-nav-item active"
+      data-page="home.html"
+    >
+
+      <i class="fa-solid fa-house"></i>
+
+      <span>
+        Home
+      </span>
+
+    </a>
+
+
+    <a
+      href="categories.html"
+      class="bottom-nav-item"
+      data-page="categories.html"
+    >
+
+      <i class="fa-solid fa-table-cells-large"></i>
+
+      <span>
+        Categories
+      </span>
+
+    </a>
+
+
+    <a
+      href="message.html"
+      class="bottom-nav-item"
+      data-page="message.html"
+    >
+
+      <i class="fa-regular fa-message"></i>
+
+      <span>
+        Message
+      </span>
+
+    </a>
+
+
+    <a
+      href="cart.html"
+      class="bottom-nav-item"
+      data-page="cart.html"
+    >
+
+      <span class="bottom-cart-icon">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <b
+          class="cart-badge"
+          id="cartBadge"
+        >
+          0
+        </b>
+
+      </span>
+
+      <span>
+        Cart
+      </span>
+
+    </a>
+
+
+    <a
+      href="account.html"
+      class="bottom-nav-item"
+      data-page="account.html"
+    >
+
+      <i class="fa-regular fa-user"></i>
+
+      <span>
+        Account
+      </span>
+
+    </a>
+
+  </nav>
+
+</div>
+
+
+<script
+  type="module"
+  src="home.js"
+></script>
+
+</body>
+
+</html>
